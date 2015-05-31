@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app1="http://schemas.android.com/apk/res/com.ashish.routofy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="96dp" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/main_laout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <include layout="@layout/header_tool_bar" />
+
+            <include layout="@layout/name_bar" />
+
+            <com.ashish.routofy.PagerSlidingTabStrip
+                android:id="@+id/strip"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/primary_color"
+                app1:pstsDividerColor="@null"
+                app1:pstsIndicatorColor="@color/white"
+                app1:pstsShouldExpand="true"
+                app1:pstsTextColorSelected="@color/white" />
+
+            <View
+                android:id="@+id/toolbar_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_gravity="top"
+                android:background="@drawable/toolbar_dropshadow" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Error occured.\nClick to retry"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</FrameLayout>
